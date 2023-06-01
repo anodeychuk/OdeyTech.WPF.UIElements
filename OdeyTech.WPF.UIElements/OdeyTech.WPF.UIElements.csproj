@@ -1,0 +1,71 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <LangVersion>9.0</LangVersion>
+    <AssemblyTitle>OdeyTech.WPF.UIElements</AssemblyTitle>
+    <Company>Andrii Odeychuk</Company>
+    <Product>OdeyTech.WPF.UIElements</Product>
+    <Copyright>Copyright © $(Company) 2023.</Copyright>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <AssemblyVersion>0.0.104</AssemblyVersion>
+    <Authors>$(Company)</Authors>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>Package contains a collection of high-quality custom UI controls for WPF applications designed to extend functionality and flexibility in building modern and visually appealing user interfaces.</Description>
+    <RepositoryUrl>https://github.com/anodeychuk/OdeyTech.WPF.UIElements</RepositoryUrl>
+    <Version>$(AssemblyVersion)</Version>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageProjectUrl>https://github.com/anodeychuk/OdeyTech.WPF.UIElements</PackageProjectUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageTags>User Interface Design, Custom Controls, Converters, UI Design, UI Elements, XAML Controls</PackageTags>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Controls\TextEntryLabel.xaml" />
+    <None Remove="Themes\Generic.xaml" />
+    <None Remove="Themes\MaskedTextBoxLabel.xaml" />
+    <None Remove="Themes\TextEntryLabelStyle.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.39" />
+    <PackageReference Include="OdeyTech.ProductivityKit" Version="0.0.19" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Page Include="Themes\MaskedTextBoxLabel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\TextEntryLabelStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Controls\TextEntryLabel.xaml.cs">
+      <SubType>Code</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Compile>
+  </ItemGroup>
+</Project>
