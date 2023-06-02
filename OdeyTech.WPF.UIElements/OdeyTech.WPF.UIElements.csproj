@@ -7,7 +7,7 @@
     <Product>OdeyTech.WPF.UIElements</Product>
     <Copyright>Copyright © $(Company) 2023.</Copyright>
     <OutputPath>bin\$(Configuration)\</OutputPath>
-    <AssemblyVersion>0.0.104</AssemblyVersion>
+    <AssemblyVersion>0.0.112</AssemblyVersion>
     <Authors>$(Company)</Authors>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>Package contains a collection of high-quality custom UI controls for WPF applications designed to extend functionality and flexibility in building modern and visually appealing user interfaces.</Description>

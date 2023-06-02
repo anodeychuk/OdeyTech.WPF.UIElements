@@ -25,8 +25,15 @@ namespace OdeyTech.WPF.UIElements.Controls
     /// <summary>
     /// The text entered by the user.
     /// </summary>
+    ///
     public static readonly DependencyProperty TextProperty =
-        DependencyProperty.Register("Text", typeof(string), typeof(TextEntryLabel), new FrameworkPropertyMetadata(string.Empty));
+        DependencyProperty.Register(
+          "Text",
+          typeof(string),
+          typeof(TextEntryLabel),
+          new FrameworkPropertyMetadata(
+            string.Empty,
+            FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
 
     /// <summary>
     /// The width of the label portion of the control.

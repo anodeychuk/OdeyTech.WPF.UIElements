@@ -22,7 +22,7 @@
                             </TextBlock.Text>
                         </TextBlock>
                         <Grid Grid.Column="1" Height="21">
-                            <TextBox x:Name="textBox" Text="{TemplateBinding Text}" />
+                            <TextBox x:Name="textBox" Text="{Binding Text, RelativeSource={RelativeSource TemplatedParent}, UpdateSourceTrigger=PropertyChanged}" />
                             <TextBlock
                                 Padding="3,0,0,0"
                                 Foreground="LightGray"

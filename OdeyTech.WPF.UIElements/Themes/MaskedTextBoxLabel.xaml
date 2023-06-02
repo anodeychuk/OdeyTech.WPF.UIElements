@@ -24,7 +24,7 @@
                             </TextBlock.Text>
                         </TextBlock>
                         <Grid Grid.Column="1" Height="21">
-                            <TextBox x:Name="textBox" Text="{TemplateBinding Text}">
+                            <TextBox x:Name="textBox" Text="{Binding Text, RelativeSource={RelativeSource TemplatedParent}, UpdateSourceTrigger=PropertyChanged}">
                                 <i:Interaction.Behaviors>
                                     <behavior:MaskedInputBehavior Mask="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:MaskedTextBoxLabel}}, Path=Mask}" />
                                 </i:Interaction.Behaviors>
