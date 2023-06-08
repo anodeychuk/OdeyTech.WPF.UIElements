@@ -91,7 +91,7 @@ To leverage the power of `OdeyTech.WPF.UIElements` in your projects, follow thes
 We welcome contributions to `OdeyTech.WPF.UIElements`! Feel free to submit pull requests or raise issues to help us improve the library.
 
 ## License
-`OdeyTech.WPF.UIElements` is released under the [MIT License][LICENSE]. See the LICENSE file for more information.
+`OdeyTech.WPF.UIElements` is released under the [Non-Commercial License][LICENSE]. See the LICENSE file for more information.
 
 ## Stay in Touch
 For more information, updates, and future releases, follow me on [LinkedIn][LIn] I'd be happy to connect and discuss any questions or ideas you might have.
