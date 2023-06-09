@@ -1,4 +1,3 @@
-
 # OdeyTech.WPF.UIElements
 
 **OdeyTech.WPF.UIElements** is a comprehensive collection of custom WPF controls and converters that facilitate the development of user interfaces in WPF applications. This repository provides an array of components and utilities to enhance the visual appeal and functionality of your WPF projects.
@@ -37,6 +36,7 @@ The `TextEntryLabel` control combines a label and a TextBox, providing a consist
 -   `TextBoxWidth`: Defines the width of the TextBox column.
 
 ### MaskedTextBoxLabel Control
+
 The `MaskedTextBoxLabel` control is designed for masked input scenarios, allowing you to enforce specific input patterns while providing a visually appealing user interface. It inherits from `TextEntryLabel` and includes additional properties for customization.
 
 ~~~xml
@@ -60,18 +60,24 @@ The `MaskedTextBoxLabel` control is designed for masked input scenarios, allowin
 - `Mask`: Defines the input mask pattern for the TextBox.
 
 ### Controlling Visibility with BoolToVisibilityConverter
+
 You can easily show or hide UI elements based on a boolean condition using the `BoolToVisibilityConverter`. Here's an example:
+
 ~~~xml
 <StackPanel Visibility="{Binding IsVisible, Converter={conv:BoolToVisibilityConverter}}">
     <!-- Your UI elements here -->
 </StackPanel>
 ~~~
 
-## Getting Started
-To leverage the power of `OdeyTech.WPF.UIElements` in your projects, follow these simple steps:
+**Note:** An example of how to use **OdeyTech.WPF.UIElements** can be found in the [OdeyTech.WPF.Example.Hospital repository][Example].
 
-1. Install the NuGet package `OdeyTech.WPF.UIElements` into your WPF project.
+## Getting Started
+
+To leverage the power of **OdeyTech.WPF.UIElements** in your projects, follow these simple steps:
+
+1. Install the NuGet package **OdeyTech.WPF.UIElements** into your WPF project.
 2. To apply the provided themes and styles to your entire application, add the following code snippet to your `App.xaml` file:
+
 ~~~xml
 <Application x:Class="YourNamespace.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -85,17 +91,22 @@ To leverage the power of `OdeyTech.WPF.UIElements` in your projects, follow thes
     </Application.Resources>
 </Application>
 ~~~
+
 3. Add the necessary XAML namespace references to the files where you want to use the custom controls, behaviors, or converters.
 
 ## Contributing
-We welcome contributions to `OdeyTech.WPF.UIElements`! Feel free to submit pull requests or raise issues to help us improve the library.
+
+We welcome contributions to **OdeyTech.WPF.UIElements**! Feel free to submit pull requests or raise issues to help us improve the library.
 
 ## License
-`OdeyTech.WPF.UIElements` is released under the [Non-Commercial License][LICENSE]. See the LICENSE file for more information.
+
+**OdeyTech.WPF.UIElements** is released under the [Non-Commercial License][LICENSE]. See the LICENSE file for more information.
 
 ## Stay in Touch
+
 For more information, updates, and future releases, follow me on [LinkedIn][LIn] I'd be happy to connect and discuss any questions or ideas you might have.
 
 [//]: #
    [LIn]: <https://www.linkedin.com/in/anodeychuk/>
    [LICENSE]: <https://github.com/anodeychuk/OdeyTech.WPF.UIElements/blob/main/LICENSE>
+   [Example]: <https://github.com/anodeychuk/OdeyTech.WPF.Example.Hospital>
