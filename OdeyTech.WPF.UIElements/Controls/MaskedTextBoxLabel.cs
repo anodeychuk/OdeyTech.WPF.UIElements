@@ -18,8 +18,7 @@ namespace OdeyTech.WPF.UIElements.Controls
         /// <summary>
         /// The mask pattern to apply for the input.
         /// </summary>
-        public static readonly DependencyProperty MaskProperty =
-            DependencyProperty.Register("Mask", typeof(string), typeof(MaskedTextBoxLabel), new FrameworkPropertyMetadata(string.Empty));
+        public static readonly DependencyProperty MaskProperty = DependencyProperty.Register(nameof(Mask), typeof(string), typeof(MaskedTextBoxLabel), new FrameworkPropertyMetadata(string.Empty));
 
         /// <summary>
         /// Gets or sets the mask pattern to apply for the input.

@@ -3,7 +3,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:conv="clr-namespace:OdeyTech.WPF.UIElements.Converters"
     xmlns:local="clr-namespace:OdeyTech.WPF.UIElements.Controls">
-    <conv:TextToVisibilityConverter x:Key="TextToVisibilityConverter" />
+
+    <conv:IsNullOrEmptyToVisibilityConverter x:Key="IsNullOrEmptyToVisibilityConverter" />
 
     <Style TargetType="{x:Type local:TextEntryLabel}">
         <Setter Property="Template">
@@ -29,11 +30,7 @@
                                 IsHitTestVisible="False"
                                 Text="{TemplateBinding TextHint}">
                                 <TextBlock.Visibility>
-                                    <Binding ElementName="textBox" Path="Text">
-                                        <Binding.Converter>
-                                            <conv:TextToVisibilityConverter />
-                                        </Binding.Converter>
-                                    </Binding>
+                                    <Binding ElementName="textBox" Path="Text" Converter="{StaticResource IsNullOrEmptyToVisibilityConverter}" />
                                 </TextBlock.Visibility>
                             </TextBlock>
                         </Grid>

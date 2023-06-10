@@ -27,8 +27,7 @@ namespace OdeyTech.WPF.UIElements.Converters
         /// <param name="parameter">An optional parameter (not used).</param>
         /// <param name="culture">The culture to use in the converter (not used).</param>
         /// <returns>The incremented value as an integer.</returns>
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-            => (int)value + 1;
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture) => (int)value + 1;
 
         /// <summary>
         /// Decrements the given integer value by 1.
@@ -38,7 +37,6 @@ namespace OdeyTech.WPF.UIElements.Converters
         /// <param name="parameter">An optional parameter (not used).</param>
         /// <param name="culture">The culture to use in the converter (not used).</param>
         /// <returns>The decremented value as an integer.</returns>
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-            => (int)value - 1;
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture) => (int)value - 1;
     }
 }

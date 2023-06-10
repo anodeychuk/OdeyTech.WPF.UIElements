@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------
-// <copyright file="TextToVisibilityConverter.cs" author="Andrii Odeychuk">
+// <copyright file="IsNullOrEmptyToVisibilityConverter.cs" author="Andrii Odeychuk">
 //
 // Copyright (c) Andrii Odeychuk. ALL RIGHTS RESERVED
 // The entire contents of this file is protected by International Copyright Laws.
@@ -17,7 +17,7 @@ namespace OdeyTech.WPF.UIElements.Converters
     /// <summary>
     /// A value converter that converts a text value to a <see cref="Visibility"/> value.
     /// </summary>
-    public class TextToVisibilityConverter : IValueConverter
+    public class IsNullOrEmptyToVisibilityConverter : IValueConverter
     {
         /// <summary>
         /// Converts a text value to a <see cref="Visibility"/> value.

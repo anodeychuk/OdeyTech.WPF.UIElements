@@ -7,7 +7,7 @@
     <Product>OdeyTech.WPF.UIElements</Product>
     <Copyright>Copyright © $(Company) 2023.</Copyright>
     <OutputPath>bin\$(Configuration)\</OutputPath>
-    <AssemblyVersion>0.0.112</AssemblyVersion>
+    <AssemblyVersion>0.0.115</AssemblyVersion>
     <Authors>$(Company)</Authors>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>Package contains a collection of high-quality custom UI controls for WPF applications designed to extend functionality and flexibility in building modern and visually appealing user interfaces.</Description>
@@ -27,7 +27,7 @@
   <ItemGroup>
     <None Remove="Controls\TextEntryLabel.xaml" />
     <None Remove="Themes\Generic.xaml" />
-    <None Remove="Themes\MaskedTextBoxLabel.xaml" />
+    <None Remove="Themes\MaskedTextBoxLabelStyle.xaml" />
     <None Remove="Themes\TextEntryLabelStyle.xaml" />
   </ItemGroup>
   <ItemGroup>
@@ -55,17 +55,11 @@
     <Resource Include="Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Resource>
-    <Page Include="Themes\MaskedTextBoxLabel.xaml">
+    <Page Include="Themes\MaskedTextBoxLabelStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\TextEntryLabelStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Update="Controls\TextEntryLabel.xaml.cs">
-      <SubType>Code</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Compile>
   </ItemGroup>
 </Project>

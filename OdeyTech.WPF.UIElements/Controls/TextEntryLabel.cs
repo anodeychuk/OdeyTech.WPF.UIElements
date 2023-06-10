@@ -19,39 +19,28 @@ namespace OdeyTech.WPF.UIElements.Controls
         /// <summary>
         /// The label text to display.
         /// </summary>
-        public static readonly DependencyProperty LabelTextProperty =
-            DependencyProperty.Register("LabelText", typeof(string), typeof(TextEntryLabel));
+        public static readonly DependencyProperty LabelTextProperty = DependencyProperty.Register(nameof(LabelText), typeof(string), typeof(TextEntryLabel));
 
         /// <summary>
         /// The text entered by the user.
         /// </summary>
         ///
-        public static readonly DependencyProperty TextProperty =
-            DependencyProperty.Register(
-                "Text",
-                typeof(string),
-                typeof(TextEntryLabel),
-                new FrameworkPropertyMetadata(
-                    string.Empty,
-                    FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
+        public static readonly DependencyProperty TextProperty = DependencyProperty.Register(nameof(Text), typeof(string), typeof(TextEntryLabel), new FrameworkPropertyMetadata(string.Empty, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
 
         /// <summary>
         /// The width of the label portion of the control.
         /// </summary>
-        public static readonly DependencyProperty LabelWidthProperty =
-            DependencyProperty.Register("LabelWidth", typeof(GridLength), typeof(TextEntryLabel), new FrameworkPropertyMetadata(new GridLength(1, GridUnitType.Star)));
+        public static readonly DependencyProperty LabelWidthProperty = DependencyProperty.Register(nameof(LabelWidth), typeof(GridLength), typeof(TextEntryLabel), new FrameworkPropertyMetadata(new GridLength(1, GridUnitType.Star)));
 
         /// <summary>
         /// The width of the TextBox portion of the control.
         /// </summary>
-        public static readonly DependencyProperty TextBoxWidthProperty =
-            DependencyProperty.Register("TextBoxWidth", typeof(GridLength), typeof(TextEntryLabel), new FrameworkPropertyMetadata(new GridLength(1, GridUnitType.Star)));
+        public static readonly DependencyProperty TextBoxWidthProperty = DependencyProperty.Register(nameof(TextBoxWidth), typeof(GridLength), typeof(TextEntryLabel), new FrameworkPropertyMetadata(new GridLength(1, GridUnitType.Star)));
 
         /// <summary>
         /// The hint text to display in the TextBox.
         /// </summary>
-        public static readonly DependencyProperty TextHintProperty =
-            DependencyProperty.Register("TextHint", typeof(string), typeof(TextEntryLabel), new FrameworkPropertyMetadata(string.Empty));
+        public static readonly DependencyProperty TextHintProperty = DependencyProperty.Register(nameof(TextHint), typeof(string), typeof(TextEntryLabel), new FrameworkPropertyMetadata(string.Empty));
 
         /// <summary>
         /// Gets or sets the label text to display.
