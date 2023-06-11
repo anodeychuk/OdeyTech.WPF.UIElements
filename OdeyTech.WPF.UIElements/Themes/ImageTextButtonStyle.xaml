@@ -4,7 +4,7 @@
     xmlns:converters="clr-namespace:OdeyTech.WPF.UIElements.Converters"
     xmlns:local="clr-namespace:OdeyTech.WPF.UIElements.Controls">
 
-    <converters:IsNotNullToVisibilityConverter x:Key="NotNullToVisibilityConverter" />
+    <converters:IsNotNullToVisibilityConverter x:Key="IsNotNullToVisibilityConverter" />
 
     <Style TargetType="{x:Type local:ImageTextButton}">
         <Setter Property="Template">
@@ -23,7 +23,7 @@
                                 Height="16"
                                 Source="{TemplateBinding ImageSource}"
                                 Visibility="{TemplateBinding ImageSource,
-                                                             Converter={StaticResource NotNullToVisibilityConverter}}" />
+                                                             Converter={StaticResource IsNotNullToVisibilityConverter}}" />
                             <TextBlock
                                 x:Name="Text"
                                 Margin="5,0,0,0"
