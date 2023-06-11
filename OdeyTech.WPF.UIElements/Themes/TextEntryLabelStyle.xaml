@@ -28,11 +28,8 @@
                                 Padding="3,0,0,0"
                                 Foreground="LightGray"
                                 IsHitTestVisible="False"
-                                Text="{TemplateBinding TextHint}">
-                                <TextBlock.Visibility>
-                                    <Binding ElementName="textBox" Path="Text" Converter="{StaticResource IsNullOrEmptyToVisibilityConverter}" />
-                                </TextBlock.Visibility>
-                            </TextBlock>
+                                Text="{TemplateBinding TextHint}"
+                                Visibility="{Binding Text, ElementName=textBox, Converter={StaticResource IsNullOrEmptyToVisibilityConverter}}" />
                         </Grid>
                     </Grid>
                 </ControlTemplate>
