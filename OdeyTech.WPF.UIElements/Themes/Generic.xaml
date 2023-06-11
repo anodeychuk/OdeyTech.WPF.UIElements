@@ -1,8 +1,9 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
 
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="MaskedTextBoxLabelStyle.xaml" />
         <ResourceDictionary Source="ImageTextButtonStyle.xaml" />
+        <ResourceDictionary Source="MaskedTextBoxLabelStyle.xaml" />
+        <ResourceDictionary Source="TextEntryLabelStyle.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
 </ResourceDictionary>
