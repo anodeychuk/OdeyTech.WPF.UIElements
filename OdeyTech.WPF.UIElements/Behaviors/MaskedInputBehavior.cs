@@ -181,8 +181,7 @@ namespace OdeyTech.WPF.UIElements.Behaviors
             }
 
             // If the string doesn't match the mask, it may still be a valid in-progress input
-            var inProgressValue = ApplyMask(str);
-            return regex.IsMatch(inProgressValue);
+            return regex.IsMatch(ApplyMask(str));
         }
 
         /// <summary>

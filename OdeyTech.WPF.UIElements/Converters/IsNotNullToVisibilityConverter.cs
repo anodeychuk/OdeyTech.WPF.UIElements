@@ -28,7 +28,10 @@ namespace OdeyTech.WPF.UIElements.Converters
         /// <param name="parameter">Optional parameter. This is ignored.</param>
         /// <param name="culture">Culture-specific information for the conversion. This is ignored.</param>
         /// <returns>A <see cref="Visibility"/> value. If the input value is not null, <see cref="Visibility.Visible"/> is returned. Otherwise, <see cref="Visibility.Collapsed"/> is returned.</returns>
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture) => value == null ? Visibility.Collapsed : Visibility.Visible;
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+            => value == null
+                ? Visibility.Collapsed
+                : Visibility.Visible;
 
         /// <summary>
         /// Converts a <see cref="Visibility"/> value back to a object.

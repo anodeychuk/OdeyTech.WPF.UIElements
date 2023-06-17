@@ -9,11 +9,13 @@
 using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
+using System.Security;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Interop;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using Microsoft.Win32.SafeHandles;
 
 namespace OdeyTech.WPF.UIElements.Controls
 {
@@ -72,7 +74,7 @@ namespace OdeyTech.WPF.UIElements.Controls
         /// </summary>
         private static void OnBitmapSourceChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            if (d is ImageTextButton control && e.NewValue is Bitmap bitmap && control.ImageSource == null)
+            if (d is ImageTextButton control && e.NewValue is Bitmap bitmap && control.ImageSource is null)
             {
                 control.ImageSource = ImageSourceFromBitmap(bitmap);
             }
@@ -83,27 +85,29 @@ namespace OdeyTech.WPF.UIElements.Controls
         /// </summary>
         private static ImageSource ImageSourceFromBitmap(Bitmap bitmap)
         {
-            IntPtr handle = bitmap.GetHbitmap();
-            try
-            {
-                return Imaging.CreateBitmapSourceFromHBitmap(
-                    handle,
-                    IntPtr.Zero,
-                    Int32Rect.Empty,
-                    BitmapSizeOptions.FromEmptyOptions()
-                );
-            }
-            finally
-            {
-                DeleteObject(handle);
-            }
+            using var handle = new SafeHBitmapHandle(bitmap.GetHbitmap(), true);
+            return Imaging.CreateBitmapSourceFromHBitmap(
+                handle.DangerousGetHandle(),
+                IntPtr.Zero,
+                Int32Rect.Empty,
+                BitmapSizeOptions.FromEmptyOptions());
         }
 
-        /// <summary>
-        /// Deletes a logical pen, brush, font, bitmap, region, or palette, freeing all system resources associated with the object.
-        /// </summary>
-        [DllImport("gdi32.dll", EntryPoint = "DeleteObject")]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        public static extern bool DeleteObject([In] IntPtr hObject);
+        // SafeHandle implementation for HBITMAP
+        public sealed class SafeHBitmapHandle : SafeHandleZeroOrMinusOneIsInvalid
+        {
+            [SecurityCritical]
+            public SafeHBitmapHandle(IntPtr preexistingHandle, bool ownsHandle)
+                : base(ownsHandle)
+            {
+                SetHandle(preexistingHandle);
+            }
+
+            protected override bool ReleaseHandle() => DeleteObject(this.handle);
+
+            [DllImport("gdi32.dll", EntryPoint = "DeleteObject")]
+            [return: MarshalAs(UnmanagedType.Bool)]
+            private static extern bool DeleteObject(IntPtr hObject);
+        }
     }
 }

@@ -31,7 +31,14 @@ namespace OdeyTech.WPF.UIElements.Converters
         /// <param name="culture">The culture to use in the conversion.</param>
         /// <returns>The converted <see cref="Visibility"/> value.</returns>
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-            => value is not bool ? null : (bool)value ? this.trueValue : this.falseValue;
+        {
+            if (value is bool boolValue)
+            {
+                return boolValue ? this.trueValue : this.falseValue;
+            }
+
+            return null;
+        }
 
         /// <summary>
         /// Converts a <see cref="Visibility"/> value back to a boolean value.
@@ -42,6 +49,13 @@ namespace OdeyTech.WPF.UIElements.Converters
         /// <param name="culture">The culture to use in the conversion.</param>
         /// <returns>The converted boolean value.</returns>
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-            => Equals(value, this.trueValue) ? true : Equals(value, this.falseValue) ? false : null;
+        {
+            if (Equals(value, this.trueValue))
+            {
+                return true;
+            }
+
+            return Equals(value, this.falseValue) ? false : null;
+        }
     }
 }
