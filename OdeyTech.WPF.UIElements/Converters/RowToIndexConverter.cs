@@ -30,10 +30,17 @@ namespace OdeyTech.WPF.UIElements.Converters
         /// <returns>The 1-based index of the row in the DataGrid, or null if the row is not in the DataGrid.</returns>
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            var item = (DataGridRow)value;
-            DataGrid grid = FindVisualParent<DataGrid>(item);
-            var index = grid.ItemContainerGenerator.IndexFromContainer(item);
-            return index < 0 ? null : index + 1;
+            if (value is DataGridRow item)
+            {
+                DataGrid grid = FindVisualParent<DataGrid>(item);
+                if (grid != null)
+                {
+                    var index = grid.ItemContainerGenerator.IndexFromContainer(item);
+                    return index < 0 ? null : index + 1;
+                }
+            }
+
+            return null;
         }
 
         /// <summary>
