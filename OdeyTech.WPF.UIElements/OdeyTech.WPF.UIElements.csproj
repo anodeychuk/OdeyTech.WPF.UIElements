@@ -2,17 +2,18 @@
   <PropertyGroup>
     <TargetFramework>net472</TargetFramework>
     <LangVersion>9.0</LangVersion>
+    <Product>OdeyTech.WPF.UIElements</Product>
     <AssemblyTitle>OdeyTech.WPF.UIElements</AssemblyTitle>
     <Company>Andrii Odeychuk</Company>
-    <Product>OdeyTech.WPF.UIElements</Product>
+    <Authors>$(Company)</Authors>
     <Copyright>Copyright © $(Company) 2023.</Copyright>
     <OutputPath>bin\$(Configuration)\</OutputPath>
-    <AssemblyVersion>0.0.206</AssemblyVersion>
-    <Authors>$(Company)</Authors>
+    <AssemblyVersion>0.0.210</AssemblyVersion>
+    <Version>$(AssemblyVersion)</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Description>Package contains a collection of high-quality custom UI controls for WPF applications designed to extend functionality and flexibility in building modern and visually appealing user interfaces.</Description>
     <RepositoryUrl>https://github.com/anodeychuk/OdeyTech.WPF.UIElements</RepositoryUrl>
-    <Version>$(AssemblyVersion)</Version>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/anodeychuk/OdeyTech.WPF.UIElements</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
@@ -43,7 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.39" />
-    <PackageReference Include="OdeyTech.ProductivityKit" Version="0.0.19" />
+    <PackageReference Include="OdeyTech.ProductivityKit" Version="0.0.39" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="PresentationFramework" />
